@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <EPiServer>
+      <salesforce>
+        <providername>Salesforce</providername>
+        <admin>
+          <displayname>Salesforce Connector</displayname>
+          <description>You can add or edit configuration settings for Salesforce connectors.</description>
+          <controldescription>Configuration settings for: </controldescription>
+          <savesuccessfully>Your settings have been saved.</savesuccessfully>
+          <errorauthentication>Error in Authentication of Credentials</errorauthentication>
+          <lblEmail>Email:</lblEmail>
+          <lblPassword>Password:</lblPassword>
+          <lblUserKey>Token:</lblUserKey>
+          <lblAccountType>Account Type:</lblAccountType>
+          <lblUpdateEntity>Multiple submissions in same session:</lblUpdateEntity>
+          <liCreateNewEntity>Create new entity</liCreateNewEntity>
+          <liUpdateExistingEntity>Update previously created entity</liUpdateExistingEntity>
+         </admin>
+        <edit>
+          <form>
+            <databasename>Salesforce Lead/Activity List</databasename>
+          </form>
+        </edit>
+        <visitorgroups>
+          <criteria>
+            <scoring>
+              <scoringmodelname>Default</scoringmodelname>
+              <scoretype>
+                <totalscore>Total Score</totalscore>
+              </scoretype>
+            </scoring>
+          </criteria>
+        </visitorgroups>
+      </salesforce>
+    </EPiServer>
+  </language>
+</languages>

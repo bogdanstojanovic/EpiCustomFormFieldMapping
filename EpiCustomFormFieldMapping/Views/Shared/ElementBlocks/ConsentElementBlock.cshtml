@@ -1,0 +1,22 @@
+﻿@model EpiCustomFormFieldMapping.Models.Blocks.ConsentElementBlock
+
+@using System.Web.Mvc
+@using EPiServer.Forms.EditView.Internal
+@using EPiServer.Forms.Helpers.Internal
+@using EPiServer.Forms.Implementation.Elements
+@using EPiServer.ServiceLocation
+
+@{
+    var formElement = Model.FormElement;
+    var validationService = ServiceLocator.Current.GetInstance<ValidationService>();
+}
+
+<div class="Form__Element Form__CustomElement Form_Privacy FormChoice form-group @validationService.GetValidationCssClasses(Model)" id="@Model.FormElement.Guid" data-epiforms-element-name="@formElement.ElementName">
+
+    <div class="m-checkbox-container">
+        <input id="@String.Format("{0}_{1}",formElement.Guid,"privacyelement")" type="checkbox" name="@formElement.ElementName" value="ConsentCollected" class="FormChoice__Input FormChoice__Input--Checkbox" />
+        <label for="@String.Format("{0}_{1}",formElement.Guid,"privacyelement")" style="display: inline;">@Html.PropertyFor(x => x.ConsentText)</label>
+    </div>
+
+</div>
+<span data-epiforms-linked-name="@formElement.ElementName" class="Form__Element__ValidationError" style="display: none;">*</span>

@@ -1,23 +1,18 @@
+using EpiCustomFormFieldMapping.Models.Pages;
+using EpiCustomFormFieldMapping.Models.ViewModels;
+using EPiServer.Find;
+using EPiServer.Find.Cms;
+using EPiServer.Find.Framework.Statistics;
+using EPiServer.Find.Helpers.Text;
+using EPiServer.Find.UI;
+using EPiServer.Find.UnifiedSearch;
+using EPiServer.Framework.Web.Resources;
+using EPiServer.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using EPiServer.Core;
-using EPiServer.Find.Framework.Statistics;
-using EPiServer.Find.Helpers.Text;
-using EPiServer.Framework.Web.Resources;
-using EpiCustomFormFieldMapping.Models.Pages;
-using EpiCustomFormFieldMapping.Models.ViewModels;
-using EPiServer.Find.UI;
-using EPiServer.Find.UnifiedSearch;
-using EPiServer.Globalization;
-using EPiServer.Find;
-using EPiServer.Find.Api.Querying.Queries;
-using EpiCustomFormFieldMapping.Controllers;
-using EPiServer.Web;
-using EPiServer.Find.Cms;
-using EpiCustomFormFieldMapping.Models.Pages;
 
 namespace EpiCustomFormFieldMapping.Controllers
 {

@@ -124,6 +124,9 @@
     <Reference Include="EPiServer.Forms.Core, Version=4.18.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Forms.Core.4.18.0\lib\EPiServer.Forms.Core.dll</HintPath>
     </Reference>
+    <Reference Include="EPiServer.Forms.Samples, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Forms.Samples.3.5.0\lib\EPiServer.Forms.Samples.dll</HintPath>
+    </Reference>
     <Reference Include="EPiServer.Forms.UI, Version=4.18.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Forms.UI.4.18.0\lib\EPiServer.Forms.UI.dll</HintPath>
     </Reference>
@@ -144,6 +147,18 @@
     </Reference>
     <Reference Include="EPiServer.Logging.Log4Net, Version=2.2.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Logging.Log4Net.2.2.2\lib\net461\EPiServer.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Episerver.Marketing.Common, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.ConnectForMarketingAutomation.5.3.0\lib\net461\Episerver.Marketing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Episerver.Marketing.Connector, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.ConnectForMarketingAutomation.5.3.0\lib\net461\Episerver.Marketing.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Episerver.Marketing.Connector.Forms, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Marketing.Automation.Forms.2.1.0\lib\net461\Episerver.Marketing.Connector.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Episerver.Marketing.Connector.Salesforce, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.MarketingAutomationIntegration.Salesforce.4.1.0\lib\net461\Episerver.Marketing.Connector.Salesforce.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.ServiceLocation.StructureMap, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.ServiceLocation.StructureMap.2.0.1\lib\net461\EPiServer.ServiceLocation.StructureMap.dll</HintPath>
@@ -343,6 +358,8 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\UrlHelpers.cs" />
     <Compile Include="Models\Blocks\ButtonBlock.cs" />
+    <Compile Include="Models\Blocks\ConsentElementBlock.cs" />
+    <Compile Include="Models\Blocks\ConsentValidator.cs" />
     <Compile Include="Models\Blocks\ContactBlock.cs" />
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Blocks\JumbotronBlock.cs" />
@@ -389,9 +406,64 @@
     <Content Include="ClientResources\Styles\LayoutIcons.css" />
     <Content Include="ClientResources\Styles\Styles.css" />
     <Content Include="favicon.ico" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\Criteria\SubmittedValue.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\epi-formssamples\FormsSamplesModule.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\epi-formssamples\themes\sleek\FormsSamples.css" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\epi-formssamples\themes\sleek\images\contenttypes\AddressesElementBlock.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\epi-formssamples\themes\sleek\images\contenttypes\DateTimeElementBlock.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\epi-formssamples\themes\sleek\images\contenttypes\DateTimeRangeElementBlock.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\epi-formssamples\themes\sleek\images\contenttypes\RecaptchaElementBlock.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\epi-formssamples\themes\sleek\images\formIcons16x16.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\AddressesElementBlock.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\DateTimeElementBlock.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\datetimepicker.modified.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\EPiServerFormsSamples.css" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\EPiServerFormsSamples.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-icons_222222_256x240.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\jquery-ui.min.css" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\jquery-ui.modified.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\jquery-ui.structure.min.css" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\jquery-ui.theme.min.css" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\3.5.0\ClientResources\ViewMode\RecaptchaElementBlock.js" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_DA.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_DE.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_EN.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_ES.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_FI.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_FR.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_IT.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_JA.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_NL.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_NO.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_SV.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\EmbeddedLangFiles\EPiServer.Forms.Samples_ZH.xml" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\Views\ElementBlocks\AddressesElementBlock.ascx" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\Views\ElementBlocks\DateTimeElementBlock.ascx" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\Views\ElementBlocks\DateTimeRangeElementBlock.ascx" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\Views\ElementBlocks\RecaptchaElementBlock.ascx" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\Views\Shared\EditorTemplates\FormModel.ascx" />
+    <Content Include="modules\_protected\Episerver.Marketing.Connector.Salesforce\EmbeddedLangFiles\EPiServer.Marketing.Connector.Salesforce_EN.xml" />
+    <Content Include="modules\_protected\Episerver.Marketing.Connector.Salesforce\Views\Admin\Settings.aspx" />
+    <Content Include="modules\_protected\Episerver.Marketing.Connector.Salesforce\Views\Admin\SettingsControl.ascx" />
+    <Content Include="modules\_protected\Episerver.Marketing.Connector\ClientResources\Profile\Profile.js" />
+    <Content Include="modules\_protected\Episerver.Marketing.Connector\Views\Admin\Settings.aspx" />
     <Content Include="Resources\LanguageFiles\ContentTypeNames.xml" />
     <Content Include="Resources\LanguageFiles\Display.xml" />
     <Content Include="Resources\LanguageFiles\EditorHints.xml" />
+    <Content Include="Resources\LanguageFiles\Episerver.Marketing.Automation.Forms_EN.xml" />
     <Content Include="Resources\LanguageFiles\FindViews.xml" />
     <Content Include="Resources\LanguageFiles\GroupNames.xml" />
     <Content Include="Resources\LanguageFiles\PropertyNames.xml" />
@@ -444,6 +516,7 @@
     <Content Include="Static\img\glyphicons-halflings-white.png" />
     <Content Include="Static\img\glyphicons-halflings.png" />
     <Content Include="Static\js\bootstrap.js" />
+    <Content Include="Static\js\consent-form-field-validator.js" />
     <Content Include="Static\js\jquery-ui.js" />
     <Content Include="Static\js\jquery.js" />
     <Content Include="Static\jwplayer\jwplayer.js" />
@@ -455,6 +528,7 @@
     <Content Include="Web.config" />
     <Content Include="App_Data\GeoLiteCity.dat" />
     <Content Include="App_Data\DefaultSiteContent.episerverdata" />
+    <Content Include="connectionStrings.config" />
     <None Include="EPiServerLog.config" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\web.config" />
     <Content Include="modules\_protected\EPiServer.Cms.TinyMce\EPiServer.Cms.TinyMce.zip" />
@@ -467,6 +541,10 @@
     <Content Include="modules\_protected\EPiServer.Forms\Views\ElementBlocks\Web.config" />
     <Content Include="modules\_protected\EPiServer.Forms\Forms.config" />
     <Content Include="modules\_protected\EPiServer.Forms\EPiServer.Forms.zip" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\Views\ElementBlocks\Web.config" />
+    <Content Include="modules\_protected\EPiServer.Forms.Samples\module.config" />
+    <Content Include="modules\_protected\Episerver.Marketing.Connector\module.config" />
+    <Content Include="modules\_protected\Episerver.Marketing.Connector.Salesforce\module.config" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\FindTemplateHint.cshtml" />
     <Content Include="Views\FindSearchPage\Index.cshtml" />
@@ -508,6 +586,7 @@
     <Content Include="Views\ImageFile\Index.cshtml" />
     <Content Include="Views\ContactBlock\Index.cshtml" />
     <Content Include="Views\ArticlePage\Index.cshtml" />
+    <Content Include="Views\Shared\ElementBlocks\ConsentElementBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

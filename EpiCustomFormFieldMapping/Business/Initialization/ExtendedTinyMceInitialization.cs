@@ -24,6 +24,10 @@ namespace EpiCustomFormFieldMapping.Business.Initialization
             {
                 // Add content CSS to the default settings.
                 config.Default()
+                    .AddPlugin("media wordcount anchor code")
+                    .Toolbar("formatselect | epi-personalized-content epi-link anchor numlist bullist indent outdent bold italic underline alignleft aligncenter alignright | image epi-image-editor media code | epi-dnd-processor | removeformat | fullscreen")
+                    .AddSetting("image_caption", true)
+                    .AddSetting("image_advtab", true)
                     .ContentCss("/static/css/editor.css");
 
                 // This will clone the default settings object and extend it by
